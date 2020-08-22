@@ -76,7 +76,7 @@ router.put('/updatepic', requireLogin, (req, res) => {
     User.findByIdAndUpdate(req.user._id, { $set: { pic: req.body.pic } }, { new: true },
         (err, result) => {
             if (err) {
-                return res.status(422).json({ error: "image cannot be posted" })
+                return res.status(422).json({ error: "image cannot be posted!!! Try again" })
             } else {
                 res.json(result)
             }
